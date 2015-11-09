@@ -1,0 +1,10 @@
+״נטפע — Roboto Condenced
+
+Formsubmit	(792 ; 684)
+submit	(1356 ; 877)
+back	(308 ; 877)
+formbg	(443 ; 224)
+smallformbg	(571 ; 373)
+plashka	(288 ; 0)
+expand	(1407 ; 0)
+exit	(1501 ; 91)
