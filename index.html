@@ -6,24 +6,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="description" content="Гра - новий рік 2016">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:200,600,900&subset=cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/game.css">
-    <style type="text/css">
-    /*video {
-      position: absolute;
-      top: 150px;
-      left: 1086px;
-      opacity: 1;
-    }*/
-/*    .wrapper {
-      position: relative;
-    }*/
-    </style>
   </head>
   <body>
-    <div id="gameWrapper" class="wrapper"><canvas class="gameCanvas" id="gameCanvas"></canvas></div>  
+<div id="gameWrapper" class="wrapper"><canvas class="gameCanvas" id="gameCanvas"></canvas></div>
+<div class="wrapperIntro">
+  <div id="particles-js"></div>
+
+  <div class="container">
+  <div class="phrases hide">
+    <h2>Створи свій</h2>
+    <h2>Новий рік</h2>
+    <h2>На софії</h2>
+    <h2>гра</h2>
+    <h2>що стане</h2>
+    <h2>реальністю</h2>
+  </div>
+   <div class="hide button button-play">
+      <div class="button-blink"></div>
+      <div class="button-text">Загрузка...</div>    
+  </div>
+
+  </div>
+</div>
+  <script src="js/preload/jquery.min.js"></script>
+  <script src="js/preload/jquery.lettering.js"></script>
+  <script src="js/preload/particles.js"></script>  
+
   <script src="js/app.min.js"></script>  
+  
+<!--  <script src="js/rAF.js"></script>
+  <script src="js/ready.js"></script>
+  <script src="js/stats.min.js"></script>
+  <script src="js/pixi.js"></script>
+  <script src="js/pixihacks.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/assetsloader.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/user.js"></script>
+  <script src="js/howler.min.js"></script>
+  <script src="js/interface/ibuttons.js"></script>
+  <script src="js/interface/ibuttonchoose.js"></script>
+  <script src="js/interface/ibuttonback.js"></script>
+  <script src="js/interface/ibuttonface.js"></script>
+  <script src="js/interface/iform.js"></script>
+  <script src="js/interface/iplashka.js"></script>
+  <script src="js/interface/itext.js"></script>
+  <script src="js/interface/igameface.js"></script>
+  <script src="js/interface/ihint.js"></script>
+  <script src="js/interface/soundcontrol.js"></script>
+  <script src="js/effects/star.js"></script>
+  <script src="js/effects/zvezda.js"></script>
+  <script src="js/effects/zvezdopad.js"></script>
+  <script src="js/effects/smoke.js"></script>
+  <script src="js/effects/hovereffect.js"></script>
+  <script src="js/scene1/carousel.js"></script>
+  <script src="js/scene1/train.js"></script>
+  <script src="js/scene1/kitchen.js"></script>
+  <script src="js/scene1/eda.js"></script>
+  <script src="js/scene1/tree.js"></script>
+  <script src="js/scene1/soundscene.js"></script>
+  <script src="js/scene1/nikolay.js"></script>  
+  <script src="js/scene2/maintree.js"></script>
+  <script src="js/scene2/treelight.js"></script>
+  <script src="js/scene2/treedecoration.js"></script>
+  <script src="js/scene2/bubble.js"></script>
+  <script src="js/scene2/decoration.js"></script>
+  <script src="js/scene3/bubble2.js"></script>
+  <script src="js/scene3/foodIcon.js"></script>
+  <script src="js/scene3/selectedFood.js"></script>
+  <script src="js/scene4/bubble3.js"></script>
+  <script src="js/scene4/friendIcon.js"></script>
+  <script src="js/scene4/selectedFriend.js"></script>
+  <script src="js/scene4/friendHint.js"></script>
+  <script src="js/scene5/videobackground.js"></script>
+  <script src="js/scene5/videosprite.js"></script>
+  <script src="js/scene5/soundselector.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/scene2.js"></script>
+  <script src="js/scene3.js"></script>
+  <script src="js/scene4.js"></script>
+  <script src="js/scene5.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/gameevents.js"></script> -->
+  
+  <script type="text/javascript">
+    var loaderTimeout;
+
+    function HideLoader() {
+
+        Game.events.loaderPlayed = true;
+
+        if (!Game.events.assetsLoaded) {
+          $(".button-play").removeClass("hide").fadeIn();  
+        }
+
+        game.start();
+    }
+
+    jQuery(function(){
+      $(document).on('ready', function() {
+        $(".phrases").removeClass("hide");
+        $(".phrases > h2").lettering('words').children("span").lettering().children("span").lettering();
+      });
+
+    loaderTimeout = setTimeout(HideLoader, 33000);
+    //console.log(loaderTimeout);
+
+    });
+
+    particlesJS.load('particles-js', 'assets/particlesjs-config.json', function() {
+      //console.log('callback - particles.js config loaded');
+    });
+  </script>
+
   <script>
   WebFontConfig = {
     google: { families: [ 'Roboto+Condensed:400,700:latin,cyrillic' ] },
@@ -46,6 +144,7 @@
     domready(function(){
       game = new Game();
       window.addEventListener('resize', game.resize);
+      //console.log("Game assets loading begin");
     })
   }
   </script>
