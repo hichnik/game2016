@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scene Manager</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="PIXIJS Scene Manager">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body>
+  
+  </body>
+  <script src="js/pixi.js"></script>
+  <script type="text/javascript">
+    function Game() {
+      this.currentScene = 0;
+
+      this.sm = new SceneManager();
+      this.sm.addScene(new Scene('scene1'));
+      this.sm.addScene(new Scene('scene2'));
+      this.sm.addScene(new Scene('scene3'));
+
+      this.currentScene = this.sm.getScene('scene2');
+      
+      console.log("this in scene: ");
+      console.log(this);
+      this.update();
+
+      //return this;
+    }
+
+    Game.prototype.setScene = function(sceneName) {
+      this.currentScene = this.sm.getScene(sceneName);
+    }
+
+
+    Game.prototype.update = function() {
+      
+      console.log("this in update: ");
+      console.log(this);
+
+      // setInterval(this.update, 1000, false);
+      //setTime
+    }
+
+    function Scene(name) {
+      this.name = name;
+    }
+    
+    function SceneManager() {
+      this.scenes = [];
+    }
+
+    SceneManager.prototype.addScene = function(sceneName) {
+      //console.log("Add scene: " + this.scenes + " " + sceneName);
+      this.scenes.push(sceneName);
+    };
+    
+    SceneManager.prototype.getScene = function(name) {
+        var i, len;
+        //console.log(this);
+        for (i = 0, len=this.scenes.length; i < len; i++) {
+          if (this.scenes[i].name === name) {
+            return this.scenes[i];
+          };
+        }
+    }
+
+    var game = new Game();
+    //console.log(game.currentScene);
+
+
+  </script>
+</html>
