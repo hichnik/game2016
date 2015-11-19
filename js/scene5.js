@@ -36,8 +36,8 @@ function Scene5(name, currentStage) {
 
 	this.soundLoader = new SoundLoader();
 	currentStage.addChild(this.soundLoader);
-
-	this.soundLoader.setPosition(120,120);
+	this.soundLoader.hide();
+	
 
 	for (var i = 0; i < this.positions.length; i++) {
 		this.soundIcons.push(new SoundSelector(i, this.positions[i], this));
