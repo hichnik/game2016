@@ -31,7 +31,7 @@ AssetsLoader.prototype.assetsToLoad = function(resourceType) {
 
   //console.log(resources);
   } else if (resourceType == 'music') {
-    [].push.apply(resources,Assets.music.mp3);
+    [].push.apply(resources,Assets.music.preload);
   }
 
 
@@ -61,6 +61,18 @@ Assets = {
     'photo' : "textures/interface/user_photo.png"
   },
   music : {
+    preload : [
+    'sound/mp3/1.mp3',
+    'sound/mp3/2.mp3',
+    'sound/mp3/3.mp3',
+    'sound/mp3/4.mp3',
+    'sound/mp3/5.mp3',
+    'sound/mp3/6.mp3',
+    'sound/mp3/7.mp3',
+    'sound/mp3/8.mp3',
+    'sound/mp3/9.mp3',
+    'sound/mp3/10.mp3',
+    ],
     mp3 : [
     'sound/mp3/1.mp3',
     'sound/mp3/2.mp3',
@@ -72,6 +84,9 @@ Assets = {
     'sound/mp3/8.mp3',
     'sound/mp3/9.mp3',
     'sound/mp3/10.mp3',
+    'sound/mp3/1.mp3',
+    'sound/mp3/2.mp3',
+
     ],
     ogg : [
     'sound/ogg/1.ogg',
