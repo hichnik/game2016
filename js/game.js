@@ -90,7 +90,9 @@ Game.prototype.start = function() {
   //console.log(this.scene.update.bind(this));
   //requestAnimationFrame(this.scene.update.bind(this));
 
+
   if (Game.events.assetsLoaded && Game.events.loaderPlayed) {
+  //if (Game.events.assetsLoaded) {
     //actual game start here..
     //destroy loader animation and start game update cycle
     $('.wrapperIntro').fadeOut('slow');
@@ -318,6 +320,12 @@ Game.prototype.update = function() {
 
     }
     
+  }
+
+
+  if (Game.events.currentStage == 4) {
+
+    game.scene5.soundLoader.rotation += 0.1;
   }
 
   this.renderer.render(this.stage);

@@ -34,6 +34,11 @@ function Scene5(name, currentStage) {
 	// Иконки выбора с позициями
 	this.soundIcons = [];
 
+	this.soundLoader = new SoundLoader();
+	currentStage.addChild(this.soundLoader);
+
+	this.soundLoader.setPosition(120,120);
+
 	for (var i = 0; i < this.positions.length; i++) {
 		this.soundIcons.push(new SoundSelector(i, this.positions[i], this));
 		currentStage.addChild(this.soundIcons[i]);

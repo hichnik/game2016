@@ -53,6 +53,7 @@ gulp.task('compress', function() {
   'js/scene5/videobackground.js',
   'js/scene5/videosprite.js',
   'js/scene5/soundselector.js',
+  'js/scene5/soundloader.js',
   'js/scene.js',
   'js/scene2.js',
   'js/scene3.js',

@@ -33,22 +33,13 @@ SoundSelector.prototype.constructor = SoundSelector;
 
 SoundSelector.prototype.onClick = function() {
 	
-	console.log("Clicked ");
-	console.log(this.type);
-	
-	//game.scene5.hint.show(false);
+	game.scene5.soundLoader.setPosition(this.position.x, this.position.y);
+	game.scene5.soundLoader.show();
 
-	//this.alpha = 1;
 	if (Game.events.sound.playing && (Game.events.sound.index !== -1)) {
-		//game.currentMusic[Game.events.sound.index].pause();
-		//console.log("Pausing current music");
 		game.currentMusic.pause();
-		
 		game.currentMusic.unload();
-		// added unload support...
-		// unload current song to save memoty on ipads
 	}  
-
 
 		game.currentMusic = new Howl({
 			//'src' : [Assets.music.mp3[i], Assets.music.ogg[i]],
@@ -56,7 +47,10 @@ SoundSelector.prototype.onClick = function() {
 			'autoplay' : true,
 			'loop' : true,
 			'volume' : 1,
-			'preload' : true
+			'preload' : true,
+			'onplay' : function() {
+				game.scene5.soundLoader.hide();
+			}
 		});
 
 		game.currentMusic.play();

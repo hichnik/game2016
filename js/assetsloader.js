@@ -435,7 +435,8 @@ Assets = {
     videoStart : "video/main_start.mp4",
     videoCycle : "video/main_cykle.mp4",
     ring : "textures/scene5/ring.png",
-  
+    loading : "textures/scene5/spinner100.png",
+    
   // нужно для прелоада звуков - не убирать!
 
   // 17.11 уже не нужно...
