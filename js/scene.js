@@ -10,6 +10,9 @@ function Scene(name, currentStage) {
 	currentStage.addChild(this.train);
 
 
+  this.branding = new Branding();
+  currentStage.addChild(this.branding);
+
 
    // Снег
 	  var sprites = new PIXI.ParticleContainer(10000, {

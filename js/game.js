@@ -91,8 +91,8 @@ Game.prototype.start = function() {
   //requestAnimationFrame(this.scene.update.bind(this));
 
 
-  if (Game.events.assetsLoaded && Game.events.loaderPlayed) {
-  //if (Game.events.assetsLoaded) {
+  //if (Game.events.assetsLoaded && Game.events.loaderPlayed) {
+  if (Game.events.assetsLoaded) {
     //actual game start here..
     //destroy loader animation and start game update cycle
     $('.wrapperIntro').fadeOut('slow');

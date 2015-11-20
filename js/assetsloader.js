@@ -343,6 +343,7 @@ Assets = {
     kitchen : "textures/scene1/v2/kitchen.png",
     kitchenHover : "textures/scene1/v2/kitchen_hover.png",
     kitchenCompleted : "textures/scene1/v2/kitchen_completed.png",
+    branding : "textures/scene1/v2/jacobs.png",
 
     //tree
     tree : "textures/scene1/v2/elka.png",

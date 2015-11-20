@@ -37,7 +37,8 @@ gulp.task('compress', function() {
   'js/scene1/eda.js',
   'js/scene1/tree.js',
   'js/scene1/soundscene.js',
-  'js/scene1/nikolay.js',  
+  'js/scene1/nikolay.js',
+  'js/scene1/branding.js',  
   'js/scene2/maintree.js',
   'js/scene2/treelight.js',
   'js/scene2/treedecoration.js',
@@ -63,7 +64,7 @@ gulp.task('compress', function() {
   'js/gameevents.js'
 
   ])
-    .pipe(concat('app2.min.js'))
+    .pipe(concat('app3.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'));
 });

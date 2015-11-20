@@ -55,8 +55,10 @@ User.prototype.exitGame = function(complete) {
 	if (!!gameCompleted) {
 		game.scene.completeForm.show();
 		Game.events.gameCompleted = true;
+		console.log("1");
 	} else {
 		game.stages[Game.events.currentStage].getChildByName('exitForm').show();
+		console.log("2");
 	}
 /*
 	if (!complete) {
