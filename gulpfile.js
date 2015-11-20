@@ -63,7 +63,7 @@ gulp.task('compress', function() {
   'js/gameevents.js'
 
   ])
-    .pipe(concat('app.min.js'))
+    .pipe(concat('app2.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'));
 });
