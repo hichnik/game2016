@@ -71,7 +71,7 @@ Assets = {
     'sound/mp3/7.mp3',
     'sound/mp3/8.mp3',
     'sound/mp3/9.mp3',
-    'sound/mp3/10.mp3',
+    'sound/mp3/10.mp3'
     ],
     mp3 : [
     'sound/mp3/1.mp3',
@@ -85,7 +85,7 @@ Assets = {
     'sound/mp3/9.mp3',
     'sound/mp3/10.mp3',
     'sound/mp3/1.mp3',
-    'sound/mp3/2.mp3',
+    'sound/mp3/2.mp3'
 
     ],
     ogg : [
