@@ -86,7 +86,6 @@ Assets = {
     'sound/mp3/10.mp3',
     'sound/mp3/1.mp3',
     'sound/mp3/2.mp3'
-
     ],
     ogg : [
     'sound/ogg/1.ogg',
@@ -99,6 +98,22 @@ Assets = {
     'sound/ogg/8.ogg',
     'sound/ogg/9.ogg',
     'sound/ogg/10.ogg',
+    'sound/ogg/1.ogg',
+    'sound/ogg/2.ogg'
+    ],
+    m4a : [
+    'sound/m4a/1.m4a',
+    'sound/m4a/2.m4a',
+    'sound/m4a/3.m4a',
+    'sound/m4a/4.m4a',
+    'sound/m4a/5.m4a',
+    'sound/m4a/6.m4a',
+    'sound/m4a/7.m4a',
+    'sound/m4a/8.m4a',
+    'sound/m4a/9.m4a',
+    'sound/m4a/10.m4a',
+    'sound/m4a/1.m4a',
+    'sound/m4a/2.m4a'
     ],
     wav : [
     'sound/wav/note_1.wav', // Звук интерфейса

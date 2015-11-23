@@ -27,4 +27,5 @@ SoundLoader.prototype.show = function() {
 
 SoundLoader.prototype.hide = function() {
 	this.alpha = 0;
-}
+};
+

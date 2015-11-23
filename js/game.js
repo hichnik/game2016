@@ -72,8 +72,13 @@ var loader = new AssetsLoader();
 
 Game.prototype.loadMusic = function() {
   var loader = new AssetsLoader();
-  loader.add(loader.assetsToLoad('music'));
-  loader.load();
+  
+  if (Howler.codecs('mp3')){
+    // Load only if mp3 can play - hope this is a desktop
+    loader.add(loader.assetsToLoad('music'));
+    loader.load();
+  }
+
 }
 
 

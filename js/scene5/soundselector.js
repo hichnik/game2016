@@ -41,9 +41,11 @@ SoundSelector.prototype.onClick = function() {
 		game.currentMusic.unload();
 	}  
 
+	if ( this.isMusicSupported() ) {
 		game.currentMusic = new Howl({
 			//'src' : [Assets.music.mp3[i], Assets.music.ogg[i]],
-			'src' : [Assets.music.mp3[this.type]],
+			//'src' : [Assets.music.mp3[this.type]],
+			'src' : [this.getCurrentMusic(this.type)],
 			'autoplay' : true,
 			'loop' : true,
 			'volume' : 1,
@@ -54,6 +56,7 @@ SoundSelector.prototype.onClick = function() {
 		});
 
 		game.currentMusic.play();
+	}
 
 		Game.events.sound.playing = true;
 		Game.events.sound.index = this.type;
@@ -74,6 +77,23 @@ SoundSelector.prototype.onMouseOut = function() {
 	//game.scene5.hint.show(false);
 
 }
+
+SoundSelector.prototype.isMusicSupported = function() {
+	return 	Howler.codecs('mp3') || 
+					Howler.codecs('ogg') ||
+					Howler.codecs('m4a');
+};
+
+
+SoundSelector.prototype.getCurrentMusic = function(type) {
+	if (Howler.codecs('mp3')) return Assets.music.mp3[type];
+	if (Howler.codecs('ogg')) return Assets.music.ogg[type];
+	if (Howler.codecs('m4a')) return Assets.music.m4a[type];
+	return false;
+}
+
+
+
 
 
 
