@@ -39,11 +39,16 @@ function IButtonSubmit(type, parentContainer) {
 		//console.log("parentContainer - hide small form");
 		parentContainer.hide();		
 		game.playSound(0);
-		
+
+		game.user.redirectTo();		
+		//console.log(parentContainer.name);
 	}
 
 	this.tap = function() {
 		parentContainer.hide();		
+		
+		game.user.redirectTo();
+		//console.log(parentContainer.name);
 	}
 
 

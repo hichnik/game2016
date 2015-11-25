@@ -46,24 +46,42 @@ User.prototype.getStats = function() {
 User.prototype.exitGame = function(complete) {
 
 	var gameCompleted = complete;
-	console.log("TODO: send user stats to server");
-	console.log("TODO: implement other functionality");
-	console.log("Close game");
+	//console.log("TODO: send user stats to server");
+	//console.log("TODO: implement other functionality");
+	//console.log("Close game");
 
 	//console.log( !!gameCompleted );
 
 	if (!!gameCompleted) {
 		game.scene.completeForm.show();
 		Game.events.gameCompleted = true;
-		console.log("1");
+		
+		Game.events.gameFinished = true;
+		//console.log("1");
 	} else {
 		game.stages[Game.events.currentStage].getChildByName('exitForm').show();
-		console.log("2");
-	}
-/*
-	if (!complete) {
-		// Iknow I know ... Life is Hard
+		Game.events.gameCompleted = true;
 		
+		Game.events.gameFinished = false;
+		//console.log("2");
 	}
-	*/
+
+}
+
+User.prototype.redirectTo = function(){
+
+		// TODO: Remove this code with good solution
+
+		if (Game.events.gameCompleted) {
+			if (Game.events.gameFinished) {
+
+				//console.log("Redirect user to gameover location");
+				window.location.replace("http://newyear.folkukraine.com/game/?over");
+
+			} else {
+
+				//console.log("Redirect user to logout location");
+				window.location.replace("http://newyear.folkukraine.com/game/?logout");
+			}
+		}
 }
